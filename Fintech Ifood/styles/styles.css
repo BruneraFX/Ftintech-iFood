@@ -1,0 +1,112 @@
+.login {
+    background-image: url(../img/fundo_login.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cadastro{
+    background-image: url(../img/fundo_cadcastro.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+:root {
+    --cor-de-fundo: #D9D9D9;
+    --cor-secundaria: #8E2424;
+    --fonte-principal: "Average Sans";
+    --cor-fonte: #000000;
+    --cor-fonte-secundaria: #888484;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+}
+
+.container__log {
+    padding-top: 30em; 
+}
+
+.formlogin input:focus {
+    border: 2px solid #FF0505;
+    outline: none;
+    box-shadow: none;
+}
+
+.formlogin label {
+font-size: 23px;
+    font-weight: 500;
+}
+.formlogin a {
+
+    font-size: 16px;
+    color: #FF0505;
+    transition: all linear 160ms;
+}
+
+.formlogin input {
+    padding: 10px;
+    font-size: 23px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+
+.formlogin h1 {
+    color: var(--cor-fonte-secundaria);
+    font-weight: 600;
+    font-size: 38px;
+}
+
+.formlogin p {
+
+    font-size: 18px;
+    color: var(--cor-fonte);
+}
+
+.container__sub {
+    padding-left: -40px;
+}
+.btn {
+    background-color: #FF0505;
+    color: #fff;
+    font-size: 29px;
+    font-weight: 300;
+    border: none;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0;
+}
+
+
+.btn:hover {
+    transform: scale(1.02);
+    background-color: #FF0505;
+
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 2px;
+background: #636363;
+}
+
+.cadastro{
+    background-image: url(../img/fundo_cadcastro.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.input-number {
+    -moz-appearance: textfield;
+}
