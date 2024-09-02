@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
 }
 
-.cadastro{
+.cadastro {
     background-image: url(../img/fundo_cadcastro.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -25,7 +25,11 @@ body {
 }
 
 .container__log {
-    padding-top: 30em; 
+    padding-top: 30em;
+}
+
+.formlogin {
+    margin-top: 200px;
 }
 
 .formlogin input:focus {
@@ -35,9 +39,10 @@ body {
 }
 
 .formlogin label {
-font-size: 23px;
+    font-size: 23px;
     font-weight: 500;
 }
+
 .formlogin a {
 
     font-size: 16px;
@@ -46,7 +51,7 @@ font-size: 23px;
 }
 
 .formlogin input {
-    padding: 10px;
+    padding: 15px;
     font-size: 23px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
@@ -73,6 +78,7 @@ font-size: 23px;
 .container__sub {
     padding-left: -40px;
 }
+
 .btn {
     background-color: #FF0505;
     color: #fff;
@@ -93,20 +99,38 @@ font-size: 23px;
 
 .divider:after,
 .divider:before {
-content: "";
-flex: 1;
-height: 2px;
-background: #636363;
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: #636363;
 }
 
-.cadastro{
-    background-image: url(../img/fundo_cadcastro.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
+form .input-field {
+    flex-direction: row;
+    column-gap: 10px;
+}
 
+.input-field input {
+    height: 45px;
+    width: 42px;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1.125rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
 
-.input-number {
-    -moz-appearance: textfield;
+.countdown {
+    padding-top: 40px;
+    padding-bottom: 45px;
+}
+
+.aut__link {
+    margin-top: 100px;
 }
