@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./script/script.js">
+    <link rel="stylesheet" href="./styles/menu.css">
+    <link rel="stylesheet" href="./styles/lojas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Minas lojas - IFood Finanças</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <img class="logo1" src="./img/logo1.png" alt="logo iFood Finanças">
+        </div>
+        <div class="page-title">
+            <h1>Minhas Lojas</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar..." id="search-input">
+            <i class='bx bx-search-alt icone-pesquisa'></i>
+
+        </div>
+        <div class="profile">
+            <img class="profile-pic" src="./img/foto perfil.png" alt="Foto de Perfil">
+        </div>
+        <div class="sidebar">
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <img class="logo1" src="./img/logo1.png" alt="logo iFood Finanças">
+            </div>
+            <hr class="solid">
+            <div class=" divider sidebar-conteudo">
+                <ul class="lista">
+                    <li class="lista_conteudo">
+                        <a href="./home.html" class="nav-link">
+                            <i class='bx bxs-home icon'></i>
+                            <spam class="link">Dashboard</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./transacoes.html" class="nav-link">
+                            <i class='bx bx-transfer-alt icon'></i>
+                            <spam class="link">Transações</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./lojas.html" class="nav-link">
+                            <i class='bx bxs-store-alt icon'></i>
+                            <spam class="link">Minhas Lojas</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./relatorios.html" class="nav-link">
+                            <i class='bx bx-line-chart icon'></i>
+                            <spam class="link">Relatórios</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./fiscal.html" class="nav-link">
+                            <i class='bx bx-receipt icon'></i>
+                            <spam class="link">Área Fiscal</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./Configuracao1.html" class="nav-link">
+                            <i class='bx bx-cog icon'></i>
+                            <spam class="link">Configurações</spam>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div class=" rounded-box row mb-4">
+            <div class="col-md-12">
+                <div class="header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h3>Resumo de Crescimento</h3>
+                        <h2 class="text-success">R$59.000,00</h2>
+                        <p>987 pedidos</p>
+                    </div>
+                    <div>
+                        <select class="form-select" id="mesSelect">
+                            <option selected>Este mês</option>
+                            <option value="1">Mês Anterior</option>
+                            <option value="2">Últimos 3 meses</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-container mt-4">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-12 text-end">
+                <button class="btn btn-success" id="btnAdicionarLoja">Adicionar Loja</button>
+            </div>
+        </div>
+        <div class="row mb-4" id="lojaContainer">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="./img/transferir (1) 1.png" class="card-img-top" alt="Restaurante Matriz">
+                    <div class="card-body">
+                        <h5 class="card-title">Restaurante Matriz</h5>
+                        <p>Unidade Zona Norte</p>
+                        <div class="info-icons mb-2">
+                            <i class="bi bi-house-door"></i> 1300m² de Salão <br>
+                            <i class="bi bi-car-front-fill"></i> Com Estacionamento
+                        </div>
+                        <button class="btn btn-primary btnVerLoja" data-loja="matriz">Ver</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="./img/images 1.png" class="card-img-top" alt="franquia Zona Sul">
+                    <div class="card-body">
+                        <h5 class="card-title">Franquia 2</h5>
+                        <p>Unidade Zona Sul</p>
+                        <div class="info-icons mb-2">
+                            <i class="bi bi-house-door"></i> 1100m² de Salão <br>
+                            <i class="bi bi-car-front-fill"></i> Com Estacionamento
+                        </div>
+                        <button class="btn btn-primary btnVerLoja" data-loja="matriz">Ver</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img src="./img/transferir 1.png" class="card-img-top" alt="Franquia Zona Leste">
+                    <div class="card-body">
+                        <h5 class="card-title">Franquia 2</h5>
+                        <p>Unidade Zona Leste</p>
+                        <div class="info-icons mb-2">
+                            <i class="bi bi-house-door"></i> 800m² de Salão <br>
+                            <i class="bi bi-car-front-fill"></i> Sem Estacionamento
+                        </div>
+                        <button class="btn btn-primary btnVerLoja" data-loja="matriz">Ver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalLoja" tabindex="-1" aria-labelledby="modalLojaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLojaLabel">Detalhes da Loja</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="nomeLoja"></h4>
+                    <p id="descricaoLoja"></p>
+                    <div class="chart-container mt-4">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                    <div class="mt-4">
+                        <h5>Top 3 Lanches Mais Vendidos</h5>
+                        <ul id="topLanches">
+                            <li>Lanche 1</li>
+                            <li>Lanche 2</li>
+                            <li>Lanche 3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalAdicionarLoja" tabindex="-1" aria-labelledby="modalAdicionarLojaLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAdicionarLojaLabel">Adicionar Nova Loja</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formAdicionarLoja">
+                        <div class="mb-3">
+                            <label for="nomeLojaInput" class="form-label">Nome da Loja</label>
+                            <input type="text" class="form-control" id="nomeLojaInput" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="localizacaoInput" class="form-label">Localização</label>
+                            <input type="text" class="form-control" id="localizacaoInput" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tamanhoInput" class="form-label">Tamanho (m²)</label>
+                            <input type="number" class="form-control" id="tamanhoInput" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estacionamentoInput" class="form-label">Possui Estacionamento?</label>
+                            <select class="form-select" id="estacionamentoInput" required>
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+<script>
+    const navBar = document.querySelector("nav"),
+        menuBtns = document.querySelectorAll(".menu-icon"),
+        overlay = document.querySelector(".main")
+
+    menuBtns.forEach(menuBtn => {
+        menuBtn.addEventListener("click", () => {
+            navBar.classList.toggle("open");
+        });
+    });
+
+    overlay.addEventListener("click", () => {
+        navBar.classList.remove("open");
+    });
+</script>
+
+<script>
+const ctx = document.getElementById('growthChart').getContext('2d');
+const growthChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['q1', 'q2', 'q3', 'q4'],
+        datasets: [
+            { label: 'Franquia 1', data: [40, 30, 50, 35], backgroundColor: 'rgba(255, 99, 132, 0.8)' },
+            { label: 'Restaurante Matriz', data: [20, 50, 35, 60], backgroundColor: 'rgba(54, 162, 235, 0.8)' },
+            { label: 'Franquia 2', data: [30, 45, 40, 55], backgroundColor: 'rgba(255, 206, 86, 0.8)' }
+        ]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: { beginAtZero: true, max: 70 }
+        }
+    }
+});
+
+function createSalesChart() {
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    return new Chart(salesCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+            datasets: [{
+                label: 'Vendas',
+                data: [1200, 1500, 1400, 1600, 2000, 1800],
+                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                fill: false
+            }]
+        },
+        options: { responsive: true }
+    });
+}
+
+document.querySelectorAll('.btnVerLoja').forEach(button => {
+    button.addEventListener('click', function () {
+        const loja = this.getAttribute('data-loja');
+        document.getElementById('nomeLoja').innerText = loja === 'matriz' ? 'Restaurante Matriz - Zona Norte' : 'Franquia 1';
+        document.getElementById('descricaoLoja').innerText = 'Informações detalhadas sobre a loja...';
+
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        new Chart(salesCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [1200, 1500, 1400, 1600, 2000, 1800],
+                    backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    fill: false
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        const topLanches = document.getElementById('topLanches');
+        topLanches.innerHTML = `
+            <li>Lanche Especial</li>
+            <li>Hambúrguer Clássico</li>
+            <li>Cheeseburger Bacon</li>
+        `;
+
+        const modal = new bootstrap.Modal(document.getElementById('modalLoja'));
+        modal.show();
+    });
+});
+    
+
+document.querySelectorAll('.btnVerLoja').forEach(button => {
+    button.addEventListener('click', function() {
+        const loja = {
+            nome: 'Restaurante Matriz',
+            localizacao: 'Zona Norte',
+            tamanho: '1300m²',
+            estacionamento: 'Sim'
+        };
+        abrirModalLoja(loja);
+    });
+});
+
+document.getElementById('btnAdicionarLoja').addEventListener('click', () => {
+    const modalAdicionarLoja = new bootstrap.Modal(document.getElementById('modalAdicionarLoja'));
+    modalAdicionarLoja.show();
+});
+
+document.getElementById('formAdicionarLoja').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nomeLoja = document.getElementById('nomeLojaInput').value;
+    const localizacao = document.getElementById('localizacaoInput').value;
+    const tamanho = document.getElementById('tamanhoInput').value;
+    const estacionamento = document.getElementById('estacionamentoInput').value;
+    
+    const novaLoja = `
+        <div class="col-md-4">
+            <div class="card text-center">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="${nomeLoja}">
+                <div class="card-body">
+                    <h5 class="card-title">${nomeLoja}</h5>
+                    <p>${localizacao}</p>
+                    <div class="info-icons mb-2">
+                        <i class="bi bi-house-door"></i> ${tamanho} <br>
+                        <i class="bi bi-car-front-fill"></i> ${estacionamento}
+                    </div>
+                    <button class="btn btn-primary btnVerLoja" data-loja="${nomeLoja}">Ver</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById('lojaContainer').insertAdjacentHTML('beforeend', novaLoja);
+    
+    const modalAdicionarLoja = bootstrap.Modal.getInstance(document.getElementById('modalAdicionarLoja'));
+    modalAdicionarLoja.hide();
+    
+    document.querySelectorAll('.btnVerLoja').forEach(button => {
+        button.addEventListener('click', function() {
+            const loja = {
+                nome: nomeLoja,
+                localizacao: localizacao,
+                tamanho: tamanho,
+                estacionamento: estacionamento
+            };
+            abrirModalLoja(loja);
+        });
+    });
+});
+
+</script>
+
+</html>

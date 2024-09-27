@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./script/script.js">
+    <link rel="stylesheet" href="./styles/menu.css">
+    <link rel="stylesheet" href="./styles/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>DashBoard - IFood Finanças</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <img class="logo1" src="./img/logo1.png" alt="logo iFood Finanças">
+        </div>
+        <div class="page-title">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar..." id="search-input">
+            <i class='bx bx-search-alt icone-pesquisa'></i>
+
+        </div>
+        <div class="profile">
+            <img class="profile-pic" src="./img/foto perfil.png" alt="Foto de Perfil">
+        </div>
+        <div class="sidebar">
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <img class="logo1" src="./img/logo1.png" alt="logo iFood Finanças">
+            </div>
+            <hr class="solid">
+            <div class=" divider sidebar-conteudo">
+                <ul class="lista">
+                    <li class="lista_conteudo">
+                        <a href="./home.html" class="nav-link">
+                            <i class='bx bxs-home icon'></i>
+                            <spam class="link">Dashboard</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./transacoes.html" class="nav-link">
+                            <i class='bx bx-transfer-alt icon'></i>
+                            <spam class="link">Transações</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./lojas.html" class="nav-link">
+                            <i class='bx bxs-store-alt icon'></i>
+                            <spam class="link">Minhas Lojas</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./relatorios.html" class="nav-link">
+                            <i class='bx bx-line-chart icon'></i>
+                            <spam class="link">Relatórios</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./fiscal.html" class="nav-link">
+                            <i class='bx bx-receipt icon'></i>
+                            <spam class="link">Área Fiscal</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./Configuracao1.html" class="nav-link">
+                            <i class='bx bx-cog icon'></i>
+                            <spam class="link">Configurações</spam>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container my-4">
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Saldo</h5>
+                    <h2>R$ 27.000,00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Total de Receita</h5>
+                    <h2>R$ 15.000</h2>
+                    <span class="text-success">↗ 4.8% de ontem</span>
+                    <canvas id="miniReceitaChart" width="200" height="100"></canvas>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Total de Despesas</h5>
+                    <h2>R$ 3.000</h2>
+                    <span class="text-success">↗ 9.3% de ontem</span>
+                    <canvas id="miniDespesasChart" width="200" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Análise Geral de Vendas</h5>
+                    <p>Vendas por hora: 135 <span class="text-success">↗ 7.5%</span></p>
+                    <canvas id="vendasPorHora"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Vendas por Região</h5>
+                    <canvas id="vendasPorRegiaoChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="card p-3">
+                    <h5>Produtos mais Vendidos</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Popularidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Oregon Burguer</td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Master Burguer</td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 65%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Siri Burguer</td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 55%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+<script>
+    const navBar = document.querySelector("nav"),
+        menuBtns = document.querySelectorAll(".menu-icon"),
+        overlay = document.querySelector(".main")
+
+    menuBtns.forEach(menuBtn => {
+        menuBtn.addEventListener("click", () => {
+            navBar.classList.toggle("open");
+        });
+    });
+
+    overlay.addEventListener("click", () => {
+        navBar.classList.remove("open");
+    });
+</script>
+
+<script>
+
+    const ctxVendasPorHora = document.getElementById('vendasPorHora').getContext('2d');
+    const vendasPorHoraChart = new Chart(ctxVendasPorHora, {
+        type: 'line',
+        data: {
+            labels: ['8:00', '10:00', '12:00', '14:00', '16:00'],
+            datasets: [{
+                label: 'Vendas por Hora',
+                data: [50, 100, 150, 200, 135],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    const ctxVendasPorRegiao = document.getElementById('vendasPorRegiaoChart').getContext('2d');
+    const vendasPorRegiaoChart = new Chart(ctxVendasPorRegiao, {
+        type: 'polarArea',
+        data: {
+            labels: ['Zona Sul', 'Zona Norte', 'Zona Leste', 'Zona Oeste'],
+            datasets: [{
+                data: [30.92, 25.00, 30.08, 20.50],
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            }
+        }
+    });
+
+
+    const ctxMiniReceita = document.getElementById('miniReceitaChart').getContext('2d');
+    const miniReceitaChart = new Chart(ctxMiniReceita, {
+        type: 'line',
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+            datasets: [{
+                label: 'Receitas Semanais',
+                data: [12000, 15000, 14000, 16000, 15000, 17000, 18000],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                fill: true,
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    display: false
+                },
+                x: {
+                    display: false
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            elements: {
+                point: {
+                    radius: 0
+                }
+            }
+        }
+    });
+
+
+    const ctxMiniDespesas = document.getElementById('miniDespesasChart').getContext('2d');
+    const miniDespesasChart = new Chart(ctxMiniDespesas, {
+        type: 'bar',
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+            datasets: [{
+                label: 'Despesas Semanais',
+                data: [2000, 3000, 2500, 3200, 2800, 3500, 3000],
+                backgroundColor: '#ff6384',
+                borderColor: '#ff6384',
+                borderWidth: 1,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    display: false
+                },
+                x: {
+                    display: false
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>

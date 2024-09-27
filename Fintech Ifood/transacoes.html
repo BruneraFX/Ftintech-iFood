@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./script/script.js">
+    <link rel="stylesheet" href="./styles/menu.css">
+    <link rel="stylesheet" href="./styles/./transacoes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Transações - IFood Finanças</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <img class="logo1" src="./img/logo1.png" alt="logo iFood Finanças">
+        </div>
+        <div class="page-title">
+            <h1>Transações</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar..." id="search-input">
+            <i class='bx bx-search-alt icone-pesquisa'></i>
+        </div>
+        <div class="profile">
+            <img class="profile-pic" src="./img/foto perfil.png" alt="Foto de Perfil">
+        </div>
+        <div class="sidebar">
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <img class="logo1" src="./img/logo1.png" alt="logo iFood Finanças">
+            </div>
+            <hr class="solid">
+            <div class=" divider sidebar-conteudo">
+                <ul class="lista">
+                    <li class="lista_conteudo">
+                        <a href="./home.html" class="nav-link">
+                            <i class='bx bxs-home icon'></i>
+                            <span class="link">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="#" class="nav-link">
+                            <i class='bx bx-transfer-alt icon'></i>
+                            <span class="link">Transações</span>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./lojas.html" class="nav-link">
+                            <i class='bx bxs-store-alt icon'></i>
+                            <span class="link">Minhas Lojas</span>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./relatorios.html" class="nav-link">
+                            <i class='bx bx-line-chart icon'></i>
+                            <span class="link">Relatórios</span>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="" class="nav-link">
+                            <i class='bx bx-receipt icon'></i>
+                            <span class="link">Área Fiscal</span>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./Configuracao1.html" class="nav-link">
+                            <i class='bx bx-cog icon'></i>
+                            <span class="link">Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="transaction-header">
+            <h2>Transações</h2>
+            <button type="button" class="btn " data-toggle="modal" data-target="#addTransactionModal">
+                Nova Transação
+            </button>
+        </div>
+        <table class="table table-striped mt-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                    <th>Tipo</th> 
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTableBody">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="addTransactionModal" tabindex="-1" aria-labelledby="addTransactionModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTransactionModalLabel">Adicionar Nova Transação</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="transactionForm">
+                        <div class="form-group">
+                            <label for="transactionDate">Data</label>
+                            <input type="date" class="form-control" id="transactionDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionDescription">Descrição</label>
+                            <input type="text" class="form-control" id="transactionDescription"
+                                placeholder="Descrição da transação" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionCategory">Categoria</label>
+                            <select class="form-control" id="transactionCategory" required>
+                                <option>Alimentação</option>
+                                <option>Transporte</option>
+                                <option>Educação</option>
+                                <option>Lazer</option>
+                                <option>Saúde</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionValue">Valor</label>
+                            <input type="number" class="form-control" id="transactionValue"
+                                placeholder="Valor da transação" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionStatus">Status</label>
+                            <select class="form-control" id="transactionStatus" required>
+                                <option>Pago</option>
+                                <option>Pendente</option>
+                                <option>Cancelado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionType">Tipo</label> 
+                            <select class="form-control" id="transactionType" required>
+                                <option value="Gasto">Gasto</option>
+                                <option value="Entrada">Entrada</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Adicionar Transação</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const navBar = document.querySelector("nav"),
+            menuBtns = document.querySelectorAll(".menu-icon"),
+            overlay = document.querySelector(".main");
+
+        menuBtns.forEach(menuBtn => {
+            menuBtn.addEventListener("click", () => {
+                navBar.classList.toggle("open");
+            });
+        });
+
+        overlay.addEventListener("click", () => {
+            navBar.classList.remove("open");
+        });
+    </script>
+
+    <script>
+
+        const transactions = [
+            {
+                date: '2024-09-01',
+                description: 'Compra de Material Escolar',
+                category: 'Educação',
+                value: 'R$ 200,00',
+                status: 'Pago',
+                type: 'Gasto', 
+            },
+            {
+                date: '2024-09-03',
+                description: 'Supermercado',
+                category: 'Alimentação',
+                value: 'R$ 350,00',
+                status: 'Pendente',
+                type: 'Gasto', 
+            },
+        ];
+
+        function updateTransactionTable() {
+            const tableBody = document.getElementById('transactionTableBody');
+            tableBody.innerHTML = '';
+
+            transactions.forEach((transaction, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${transaction.date}</td>
+                        <td>${transaction.description}</td>
+                        <td>${transaction.category}</td>
+                        <td>${transaction.value}</td>
+                        <td>${transaction.status}</td>
+                        <td>${transaction.type}</td> <!-- Nova célula para o tipo de transação -->
+                        <td>
+                            <button class="btn btn-table btn-warning btn-sm">Editar</button>
+                            <button class="btn btn-table btn-danger btn-sm">Excluir</button>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        document.getElementById('transactionForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const newTransaction = {
+                date: document.getElementById('transactionDate').value,
+                description: document.getElementById('transactionDescription').value,
+                category: document.getElementById('transactionCategory').value,
+                value: `R$ ${parseFloat(document.getElementById('transactionValue').value).toFixed(2)}`,
+                status: document.getElementById('transactionStatus').value,
+                type: document.getElementById('transactionType').value, 
+            };
+
+            transactions.push(newTransaction);
+            updateTransactionTable();
+
+            $('#addTransactionModal').modal('hide');
+
+            document.getElementById('transactionForm').reset();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            updateTransactionTable();
+        });
+    </script>
+</body>
+
+</html>

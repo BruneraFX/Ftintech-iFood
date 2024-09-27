@@ -1,0 +1,45 @@
+
+.header h3 {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+
+.header h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.header p {
+    font-size: 0.9rem;
+    color: var(--cor-fonte-secundaria);
+}
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body h5 {
+    font-size: 1.2rem;
+}
+
+.info-icons {
+    font-size: 0.9rem;
+    color: var(--cor-fonte-secundaria);
+}
+
+.info-icons i {
+    margin-right: 5px;
+}
+
+.rounded-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

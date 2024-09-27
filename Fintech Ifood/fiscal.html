@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./script/script.js">
+    <link rel="stylesheet" href="./styles/menu.css">
+    <link rel="stylesheet" href="./styles/fiscal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Área Fiscal - IFood Finanças</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <img class="logo1" src="./img/logo1.png" alt="logo iFood Finanças">
+        </div>
+        <div class="page-title">
+            <h1>Área Fiscal</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar..." id="search-input" >
+            <i class='bx bx-search-alt icone-pesquisa'></i>
+            
+        </div>
+        <div class="profile">
+            <img class="profile-pic" src="./img/foto perfil.png" alt="Foto de Perfil">
+        </div>
+        <div class="sidebar">
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <img class="logo1" src="./img/logo1.png" alt="logo iFood Finanças">
+            </div>
+            <hr class="solid">
+            <div class=" divider sidebar-conteudo">
+                <ul class="lista">
+                    <li class="lista_conteudo">
+                        <a href="./home.html" class="nav-link">
+                            <i class='bx bxs-home icon'></i>
+                            <spam class="link">Dashboard</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./transacoes.html" class="nav-link">
+                            <i class='bx bx-transfer-alt icon'></i>
+                            <spam class="link">Transações</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./lojas.html" class="nav-link">
+                            <i class='bx bxs-store-alt icon'></i>
+                            <spam class="link">Minhas Lojas</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./relatorios.html" class="nav-link">
+                            <i class='bx bx-line-chart icon'></i>
+                            <spam class="link">Relatórios</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./fiscal.html" class="nav-link">
+                            <i class='bx bx-receipt icon'></i>
+                            <spam class="link">Área Fiscal</spam>
+                        </a>
+                    </li>
+                    <li class="lista_conteudo">
+                        <a href="./Configuracao1.html" class="nav-link">
+                            <i class='bx bx-cog icon'></i>
+                            <spam class="link">Configurações</spam>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Área Fiscal - Lojas</h1>
+        <div class="tax-info">
+            <h3>Impostos e Contribuições</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Imposto</th>
+                        <th>Porcentagem (%)</th>
+                        <th>Gasto Total (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ICMS (Imposto sobre Circulação de Mercadorias e Serviços)</td>
+                        <td>18%</td>
+                        <td>R$ 63.000,00</td>
+                    </tr>
+                    <tr>
+                        <td>ISS (Imposto sobre Serviços)</td>
+                        <td>5%</td>
+                        <td>R$ 17.500,00</td>
+                    </tr>
+                    <tr>
+                        <td>PIS (Programa de Integração Social)</td>
+                        <td>1.65%</td>
+                        <td>R$ 5.775,00</td>
+                    </tr>
+                    <tr>
+                        <td>COFINS (Contribuição para Financiamento da Seguridade Social)</td>
+                        <td>3%</td>
+                        <td>R$ 10.500,00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th>27.65%</th>
+                        <th>R$ 96.775,00</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="calculator">
+            <h3>Simulador de Impostos</h3>
+            <div class="form-group">
+                <label for="income">Informe o valor do faturamento (R$):</label>
+                <input type="number" id="income" class="form-control" placeholder="Digite o valor do faturamento...">
+            </div>
+
+            <button class="btn btn-primary" id="calculateBtn">Calcular Impostos</button>
+
+            <h4>Resultado da Simulação</h4>
+            <div id="result" class="result-box"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const navBar = document.querySelector("nav"),
+    menuBtns = document.querySelectorAll(".menu-icon"),
+    overlay = document.querySelector(".main")
+    
+    menuBtns.forEach(menuBtn => {
+        menuBtn.addEventListener("click", () => {
+            navBar.classList.toggle("open");
+        });
+    });
+
+    overlay.addEventListener("click", () => {
+        navBar.classList.remove("open");
+    });
+</script>
+
+<script>
+    document.getElementById("calculateBtn").addEventListener("click", function () {
+        const income = parseFloat(document.getElementById("income").value);
+        const icms = income * 0.18;
+        const iss = income * 0.05;
+        const pis = income * 0.0165;
+        const cofins = income * 0.03;
+
+        const totalTaxes = icms + iss + pis + cofins;
+
+        document.getElementById("result").innerHTML = `
+            <p>ICMS (18%): R$ ${icms.toFixed(2)}</p>
+            <p>ISS (5%): R$ ${iss.toFixed(2)}</p>
+            <p>PIS (1.65%): R$ ${pis.toFixed(2)}</p>
+            <p>COFINS (3%): R$ ${cofins.toFixed(2)}</p>
+            <p><strong>Total de Impostos: R$ ${totalTaxes.toFixed(2)}</strong></p>
+        `;
+    });
+</script>
+
+</html>
