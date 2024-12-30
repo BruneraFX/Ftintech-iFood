@@ -1,10 +1,10 @@
 🚀 Fintech Ifood
 
-📚 Projeto de Fintech para a disciplina de [Nome da Disciplina]
+📚 Projeto de Fintech para pareceiros da IFood
 
 📄 Resumo
 
-Este projeto foi desenvolvido como parte da disciplina de [Nome da Disciplina] na faculdade. O objetivo foi criar uma solução de fintech para o Ifood, uma plataforma de entrega de comida online. O projeto demonstra a aplicação de conceitos de fintech em um caso real, utilizando tecnologias modernas e linguagens de programação atuais.
+Este projeto foi desenvolvido como parte do projeto na faculdade FIAP com pareceria da empresa IFood. O objetivo foi criar uma solução de fintech para o Ifood, uma plataforma de entrega de comida online. O projeto demonstra a aplicação de conceitos de fintech em um caso real, utilizando tecnologias modernas e linguagens de programação atuais.
 
 🔧 Funcionalidades
 
